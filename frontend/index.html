@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MEDISMART</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>MEDISMART</h1>
+      <h2>La medicina al alcance de todos, con palabras que todos entienden.<h2>
+  </header>
+
+  <main>
+    <section id="inicio">
+      <h2>Problema global</h2>
+      <p>Segun la evaluacion nacional de la alfabetizacion, el 36% de los adultos cuentan con un nivel limitado en la comprension del lenguaje en el sector de salud.</p>
+    </section>
+
+    <section id="sobre">
+      <h2>Solucion</h2>
+      <p>Tenemos el objetivo de promover la comprension del lenguaje farmacologico.</p>
+    </section>
+
+    <section id="cuerpo">
+      <h2>Seleccione un medicamento</h2>
+      <select id="selector">
+  <option value="">-- Selecciona --</option>
+  <option value="Atorvastatina">Atorvastatina</option>
+  <option value="Clonazepam">Clonazepam</option>
+  <option value="Enalapril">Enalapril</option>
+  <option value="Ibuprofeno">Ibuprofeno</option>
+  <option value="Ketorolaco">Ketorolaco</option>
+  <option value="Paracetamol">Paracetamol</option>
+  <option value="Rosuvastatina">Rosuvastatina</option>
+</select>
+
+ <div id="info"></div>
+
+ <script>
+    const medicamentos = {
+      Atorvastatina: {
+        nombre: "Atorvastatina",
+        forma_uso: "Tableta",
+        concentracion: "10 mg, 20 mg, 40 mg y 80 mg",
+        indicacion:"Reduce lo niveles de colesterol en la sangre"
+      },
+      Clonazepam: {
+        nombre: "Clonazepam",
+        forma_uso: "Comprimido",
+        concentracion: "0.5 mg y 2 mg",
+        indicacion: "Tratamiento de trastornos de ansiedad y convulsiones"
+      },
+      Enalapril: {
+        nombre: "Enalapril",
+        forma_uso: "Tableta",
+        concentracion: "10 mg/10 mg y 20 mg/10 mg",
+        indicacion: "Tratamiento de la hipertension y enfermedades cardiacas"
+      },
+      Ibuprofeno: {
+        nombre: "Ibuprofeno",
+        forma_uso : "Capsula",
+        concentracion: "100 mg y 400 mg",
+        indicacion: "Analgesico y antiinflamatorio no esteroideo"
+      },
+       Ketorolaco: {
+        nombre: "Ketoroloca",
+        forma_uso: "Tableta",
+        concentracion: "20 mg/10 mg",
+        indicacion: "Analgesico para el tratamiento del dolor moderado a severo"
+      },
+      Paracetamol: {
+        nombre: "Paracetamol",
+        forma_uso: "Oral",
+        concentracion: "500 mg",
+        indicacion: "Dolor leve, fiebre"
+      },
+       Rosuvastatina: {
+        nombre: "Rosuvastatina/ezetimba",
+        forma_uso: "Tableta",
+        concentracion: "10 mg/10 mg y 20 mg/10 mg",
+        indicacion: "Reduccion del colesterol y prevencion de enfermedades cardiovasculares"
+     }
+  };
+
+  document.getElementById('selector').addEventListener('change', function () {
+    const valor = this.value;
+    const info = document.getElementById('info');
+
+    if (medicamentos[valor]) {
+      const med = medicamentos[valor];
+      info.innerHTML = `
+        <h3>${med.nombre}</h3>
+        <p><strong>Forma de uso:</strong> ${med.forma_uso}</p>
+        <p><strong>Concentración:</strong> ${med.concentracion}</p>
+        <p><strong>Indicación terapéutica:</strong> ${med.indicacion}</p>
+      `;
+    } else {
+      info.innerHTML = "";
+      }
+  });
+  </script>
+</body>
+</html>
+      
+  <footer>
+    <p>&copy; MEDISMART</p>
+  </footer>
+</body>
+</html>
+
+<link rel="stylesheet" href="style.css">
+<head>
+  <meta charset="UTF-8">
+  <title>MEDISMART</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #131E3A;
+      color: white; 
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    footer {
+      background-color: #eee;
+      text-align: center;
+      padding: 10px;
+    }
+  #selector {
+  width: 90%;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  </style>
+</head>
+
+
+
